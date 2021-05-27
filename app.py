@@ -5,7 +5,7 @@ app.debug = True
 
 @app.route('/', methods=['GET','POST'])
 def hello_world():
-    return '</h1> Hello World! </h1>'
+    return render_template('Home.html', name = "정호성")
     
 
 if __name__== '__main__':
