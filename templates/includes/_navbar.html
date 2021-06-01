@@ -15,7 +15,14 @@
           <a class="nav-link" href="/articles">Articles</a>
         </li>
       </ul>
+      {% if session['username'] %}
+      <a class="btn btn-danger" href="/logout" role="button">Logout</a>
+      {% else %}
       <a class="btn btn-danger" href="/login" role="button">Login</a>
       <a class="btn btn-success" href="/register" role="button">Signup</a>
+      {% endif %}
+      {% if session['username'] == 'admin' %}
+      <a class="btn btn-success" href="/admin" role="button">admin</a>
+      {% endif %}
     </div>
   </nav>

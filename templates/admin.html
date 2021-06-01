@@ -1,0 +1,36 @@
+{% extends 'layout.html' %} 
+
+    {% block body %} 
+    <div class="jumbotron">
+        <h1 class="display-4">ADMIN</h1>
+        <p class="lead">This is admin page</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NAME</th>
+                    <th>EMAIL</th>
+                    <th>USERNAME</th>
+                </tr>
+            </thead>
+            <tbody>
+              <ul>
+                {% for user in users %}
+                <tr>
+                <td>{{user[0]}}</td>
+                <td>{{user[1]}}</td>
+                <td>{{user[2]}}</td>
+                <td>{{user[3]}}</td>
+                <td><a class="btn btn-primary" href="/admin/{{user[0]}}/edit" role="button">EDIT</a>
+                </td>
+                <td><a class="btn btn-primary" href="/admin/{{user[0]}}/delete"
+                  role="button" onclick="return confirm('정말 삭제하시겠습니까?')">DELETE</a>
+                </td>
+                </tr>
+                {% endfor %}
+              </ul>           
+            </tbody>
+        </table>
+        <hr class="my-4">
+      </div>
+    {% endblock %} 
