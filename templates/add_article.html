@@ -1,14 +1,15 @@
-{% extends 'layout.html' %}
-{% block body %}
-<div class="jumbotron">
-    <h1 class="display-4">About</h1>
-    <form action="/examples/media/action_target.php" method="get">
-        제목 : <input type="text" name="st_name"><br>
-        내용 : <input type="text" name="st_id"><br>
-        글쓴이 : <input type="text" name="department"><br>
-        <input type="submit">
-    </form>
-    <a class="btn btn-primary btn-lg" href="/articles" role="button">돌아가기</a>
-  </div>
+{% extends 'layout.html' %} 
+​
+    {% block body %} 
+    <div class="jumbotron">
+        <h1 class="display-4">ABOUT</h1>
+        <form action="/add_article" method="POST">
+            제목 : <input type="text" name="title"><br>
+            내용 : <input type="text" name="description"><br>
+            글쓴이 : <input type="text" name="author"><br>
+            <input type="submit">
+        </form>
+        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+      </div>
 {% endblock %} 
-  
+​

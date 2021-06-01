@@ -1,0 +1,16 @@
+{% extends 'layout.html' %} 
+
+    {% block body %} 
+    <div class="jumbotron">
+        <h1 class="display-4">ARTICLE No_{{article[0]}}</h1>
+         
+        <form action="/article/{{article[0]}}/edit" method="POST">
+            제목 : <input type="text" value="{{article[1]}}" name="title"><br>
+            내용 : <textarea name="description" id="" cols="30" rows="10">{{article[2]}}</textarea><br>
+            글쓴이 : <input type="text" value="{{article[3]}}" name="author"><br>
+            <input type="submit" value="저장">
+        </form>
+
+        <a class="btn btn-primary btn-lg" href="/articles" role="button">취소</a>
+      </div>
+    {% endblock %} 
